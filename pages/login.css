@@ -1,13 +1,19 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
 }
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-input[type=text], input[type=password] {
+form {
+  border: 3px solid #f1f1f1;
+  margin-top: 200px;
+}
+
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -17,7 +23,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -51,17 +57,17 @@ img.avatar {
 }
 
 span.psw {
-  float: right;
-  padding-top: 16px;
+  float: right; 
+  margin-right: 14px
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
   span.psw {
-     display: block;
-     float: none;
+    display: block;
+    float: none;
   }
   .cancelbtn {
-     width: 100%;
+    width: 100%;
   }
 }

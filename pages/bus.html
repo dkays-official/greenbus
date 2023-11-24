@@ -17,11 +17,13 @@
             padding: 10px;
         }
 
-        .navbar {
+        body .navbar {
             background-color: white;
             color: black;
             text-align: right;
             padding: 10px;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .navbar a {
@@ -31,7 +33,7 @@
         }
 
         .banner {
-            position: relative; 
+            position: relative;
             background-image: url('../banner.jpg');
             background-size: cover;
             height: 80vh;
@@ -80,9 +82,65 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.59);
         }
+
+        .content {
+            display: flex;
+        }
+
+        .search {
+            flex: 1;
+        }
+
+        .results {
+            flex: 2;
+            padding: 20px;
+        }
+        .details form {
+            gap: 20px;
+        }
+
+        .search {
+            margin-right: 20px;
+        }
+
+        .results {
+            flex: 3;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+        }
+        .wrapper{
+            box-shadow: 1px 4px 28px 0px rgba(6, 120, 69, 0.75);
+            border-radius: 10px;
+        }
+        .bus{
+            box-shadow: 1px 4px 28px 0px rgba(229, 229, 29, 0.5);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            }
+        .timing{
+            text-align: center;
+        }
+        .cost{
+            text-align: right;
+        }
+        p span{
+            margin: 0 10px;
+        }
+        i{
+            margin: 0 15px;
+        }
+     .bookSeat{
+        text-align: right;
+     }
+     .busListContainer{
+        display: none;
+     }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -91,21 +149,105 @@
         <p>HARYANA ROADWAYS</p>
     </div>
     <div class="navbar">
-        <a href="#">About Us</a>
-        <a href="#">Helpline Number</a>
-        <a href="../pages/login.html" id="userName">Login</a>
-    </div>
-    <div class="banner">
-        <div class="details">
-            <form>
-                <input type="text" id="from" name="From" placeholder="From">
-                <input type="text" id="destination" name="destination" placeholder="Destination">
-                <input type="date" id="date" name="date" placeholder="Date">
-                <button type="submit">Search</button>
-            </form>
+        <div class="nav-item">
+            <a href="#">About Us</a>
+        </div>
+        <div class="nav-item">
+            <a href="#">Helpline Number</a>
+        </div>
+        <div class="nav-item">
+            <a href="../pages/login.html" id="userName">Login</a>
         </div>
     </div>
-    <script src="../code.js"></script>
+    
+        <div class="container wrapper mt-5 p-5"> 
+            <div class="row"> 
+            <div class="col-md-3"><input type="text" id="origin" name="origin" placeholder="Origin" class="form-control"></div>
+            <div class="col-md-3"><input type="text" id="destination" name="destination" placeholder="Destination" class="form-control"></div>
+            <div class="col-md-3"> <input type="date" id="date" name="date" placeholder="Date" class="form-control"></div>
+            <div class="col-md-3"><button type="submit" class="form-control btn btn-success" id="searchBus">Search</button></div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="busListContainer mt-5">
+        <div class="row bus mt-1 d-flex justify-content-center align-items-center p-1">
+        <div class="col-md-4 busName"><p><h5> Sharma Travel Service </h5> </p> <p>A/C Seater / Sleeper (2+1)</p></div>
+        <div class="col-md-4 timing"><p> <span>10:25</span><span>5 hours</span><span>5:00</span></p></div>
+        <div class="col-md-4 cost"><h5>&#8377; 200</h5></div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 amenties"> 
+                <span><i class="fa-solid fa-bottle-water"></i><i class="fa-solid fa-wifi"></i><i class="fa-brands fa-usb"></i></span>
+            </div>
+            <div class="col-md-6 bookSeat">
+                <button class="seatBtn btn btn-info">Book Seat</button>
+            </div>
+            </div>
+        </div>
+        <div class="row bus mt-1 d-flex justify-content-center align-items-center p-1">
+            <div class="col-md-4 busName"><p><h5> Bhardwaj Bus Service </h5> </p> <p>A/C Seater / Sleeper (2+1)</p></div>
+            <div class="col-md-4 timing"><p> <span>10:25</span><span>5 hours</span><span>5:00</span></p></div>
+            <div class="col-md-4 cost"><h5>&#8377; 200</h5></div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 amenties"> 
+                    <span><i class="fa-solid fa-bottle-water"></i><i class="fa-solid fa-wifi"></i><i class="fa-brands fa-usb"></i></span>
+                </div>
+                <div class="col-md-6 bookSeat">
+                    <button class="seatBtn btn btn-info">Book Seat</button>
+                </div>
+                </div>
+            </div>
+            <div class="row bus mt-1 d-flex justify-content-center align-items-center p-1">
+                <div class="col-md-4 busName"><p><h5> Thakur Tours And Travel </h5> </p> <p>A/C Seater / Sleeper (2+1)</p></div>
+                <div class="col-md-4 timing"><p> <span>10:25</span><span>5 hours</span><span>5:00</span></p></div>
+                <div class="col-md-4 cost"><h5>&#8377; 200</h5></div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 amenties"> 
+                        <span><i class="fa-solid fa-bottle-water"></i><i class="fa-solid fa-wifi"></i><i class="fa-brands fa-usb"></i></span>
+                    </div>
+                    <div class="col-md-6 bookSeat">
+                        <button class="seatBtn btn btn-info">Book Seat</button>
+                    </div>
+                    </div>
+                </div>
+                <div class="row bus mt-1 d-flex justify-content-center align-items-center p-1">
+                    <div class="col-md-4 busName"><p><h5> Kumari Delux Bus Service </h5> </p> <p>A/C Seater / Sleeper (2+1)</p></div>
+                    <div class="col-md-4 timing"><p> <span>10:25</span><span>5 hours</span><span>5:00</span></p></div>
+                    <div class="col-md-4 cost"><h5>&#8377; 200</h5></div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6 amenties"> 
+                            <span><i class="fa-solid fa-bottle-water"></i><i class="fa-solid fa-wifi"></i><i class="fa-brands fa-usb"></i></span>
+                        </div>
+                        <div class="col-md-6 bookSeat">
+                            <button class="seatBtn btn btn-info">Book Seat</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row bus mt-1 d-flex justify-content-center align-items-center p-1">
+                        <div class="col-md-4 busName"><p><h5> Khan Travels </h5> </p> <p>A/C Seater / Sleeper (2+1)</p></div>
+                        <div class="col-md-4 timing"><p> <span>10:25</span><span>5 hours</span><span>5:00</span></p></div>
+                        <div class="col-md-4 cost"><h5>&#8377; 200</h5></div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6 amenties"> 
+                                <span><i class="fa-solid fa-bottle-water"></i><i class="fa-solid fa-wifi"></i><i class="fa-brands fa-usb"></i></span>
+                            </div>
+                            <div class="col-md-6 bookSeat">
+                                <button class="seatBtn btn btn-info">Book Seat</button>
+                            </div>
+                            </div>
+                        </div>
+
+        </div>
+    </div>    
+    <script src="./login.js"></script>
+    <script src="bus.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

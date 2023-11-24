@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#seatContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#seatContainer div {
+    width: 50px;
+    height: 50px;
+    background-color: #bbb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#seatContainer div.booked {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+#seatContainer div.selected {
+    background-color: #777;
+}
