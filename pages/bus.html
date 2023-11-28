@@ -114,10 +114,10 @@
             box-shadow: 1px 4px 28px 0px rgba(6, 120, 69, 0.75);
             border-radius: 10px;
         }
-        .bus{
-            box-shadow: 1px 4px 28px 0px rgba(229, 229, 29, 0.5);
+        .bus{           
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            border: 1px solid;
             }
         .timing{
             text-align: center;
@@ -162,8 +162,40 @@
     
         <div class="container wrapper mt-5 p-5"> 
             <div class="row"> 
-            <div class="col-md-3"><input type="text" id="origin" name="origin" placeholder="Origin" class="form-control"></div>
-            <div class="col-md-3"><input type="text" id="destination" name="destination" placeholder="Destination" class="form-control"></div>
+            <div class="col-md-3">
+                <select id="origin" class="form-control">
+                <option value disabled selected hidden>Origin</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalor</option>
+                <option>Hyderbad</option>
+                <option>Ahmedabad</option>
+                <option>Chennai</option>
+                <option>Kolkata</option>
+                <option>Surat</option>
+                <option>Pune</option>
+                <option>Chandigarh</option>
+                <option>Manali</option>
+                <option>Shimla</option>
+                <option>Solan</option>
+                    
+            </select></div>
+            <div class="col-md-3">  <select id="destination" class="form-control">
+                <option value disabled selected hidden>Destination</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Bangalor</option>
+                <option>Hyderbad</option>
+                <option>Ahmedabad</option>
+                <option>Chennai</option>
+                <option>Kolkata</option>
+                <option>Surat</option>
+                <option>Pune</option>
+                <option>Chandigarh</option>
+                <option>Manali</option>
+                <option>Shimla</option>
+                <option>Solan</option>
+            </select></div>
             <div class="col-md-3"> <input type="date" id="date" name="date" placeholder="Date" class="form-control"></div>
             <div class="col-md-3"><button type="submit" class="form-control btn btn-success" id="searchBus">Search</button></div>
         </div>

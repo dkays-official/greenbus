@@ -2,14 +2,13 @@ let seats = [];
 let selectedSeats = [];
 const MAX_SEATS = 5;
 const MIN_SEATS = 2;
-const SEAT_PRICE = 20; 
+const SEAT_PRICE = 500; 
 
-// Generate 24 seats
 for (let i = 0; i < 24; i++) {
     seats.push({id: i, booked: false});
 }
 
-// Display seats on page load
+
 window.onload = function() {
     // Load booked seats from localStorage
     let bookedSeats = JSON.parse(localStorage.getItem('bookedSeats')) || [];
@@ -48,7 +47,7 @@ function selectSeat(id) {
         }
     }
     document.getElementById('selectedSeats').innerHTML = `Selected Seats (${selectedSeats.length}): ${selectedSeats.map(id => id + 1).join(', ')}`;
-    document.getElementById('total').innerHTML = `Total: $${selectedSeats.length * SEAT_PRICE}`;
+    document.getElementById('total').innerHTML = `Total: <span>&#8377</span>${selectedSeats.length * SEAT_PRICE}`;
 }
 
 function bookSeats() {
@@ -60,13 +59,10 @@ function bookSeats() {
         seats[id].booked = true;
         document.getElementById(`seat${id}`).classList.add('booked');
     });
-    // Save booked seats to localStorage
-    let bookedSeats = JSON.parse(localStorage.getItem('bookedSeats')) || [];
-    bookedSeats = [...bookedSeats, ...selectedSeats];
-    localStorage.setItem('bookedSeats', JSON.stringify(bookedSeats));
+
+    localStorage.setItem('bookedSeats', JSON.stringify(selectedSeats));
 
     selectedSeats = [];
     alert('Seats booked successfully!');
-
-
+    window.open('invoice.html', '_blank');
 };

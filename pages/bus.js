@@ -3,9 +3,7 @@ let origin = document.getElementById("origin");
 let destination = document.getElementById("destination");
 
 search.addEventListener("click", function () {
-    if(check()){
-        document.querySelector('.busListContainer').style.display = "block";
-    }
+    document.querySelector('.busListContainer').style.display = "block";
     seatPage();
 }); 
 

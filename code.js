@@ -1,3 +1,15 @@
+// localStorage.setItem("isLoggedIn", false);
+
+// function defaultPage(){
+//   let isLoggedIn = localStorage.getItem("isLoggedIn");
+//   if(isLoggedIn == "true"){
+//     window.location.href = "../pages/bus.html"
+//   }
+//   else{
+//     window.location.href= "../pages/login.html"
+//   }
+// }
+
 let fname = document.getElementById("fname");
 let lname = document.getElementById("lname");
 let email = document.getElementById("email");

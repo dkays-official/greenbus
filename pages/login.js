@@ -9,7 +9,7 @@ function login() {
         window.location.href = "./bus.html";
       } else {
         alert("Invalid email or password");
-      }   
+      }
     });
   }
   
