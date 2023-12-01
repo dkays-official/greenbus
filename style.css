@@ -63,7 +63,11 @@
     text-align: center;
   }
 
-  .errClass{
-    border: 2px solid red;
+ form input.errClass{
+    border: 2px solid #ff0000;
   }
+  small{
+    color: #ff0000;
+  }
+  
 
