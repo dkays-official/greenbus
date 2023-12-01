@@ -78,7 +78,7 @@ function regCheck() {
     pass.className = "errClass";
     return false;
   }
-  regCheck();
+
   return true;
 }
 
