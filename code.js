@@ -3,6 +3,14 @@ let lname = document.getElementById("lname");
 let email = document.getElementById("email");
 let pass = document.getElementById("psw");
 let userName;
+let singUpForm = document.getElementById("regForm");
+
+singUpForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  registration();
+})
+
+
 function registration() {
   if (localStorage) {
     document.getElementById("regForm").addEventListener("submit", function (e) {
@@ -20,8 +28,7 @@ function registration() {
         // let data = bytes.toString(CryptoJS.enc.Utf8);
 
         localStorage.setItem(user.email, JSON.stringify(user));
-        window.location.href = "./pages/login.html";
-        window.alert("You have been registered Successfully!");
+        window.location.href = "./pages/loginPage.html";
       }
     });
   }
@@ -46,6 +53,19 @@ function regCheck() {
     
   }
 
+  existingEmail = localStorage.getItem(email.value);
+
+  if(email.value != existingEmail["email"]) {
+    document.getElementById('emailerror').innerHTML = "";
+    email.className = "";
+  }
+  else
+  {
+    document.getElementById('emailerror').innerHTML = "*Email Already Exists";
+    email.className = "errClass";
+    return false;
+  }
+
   if (fnamecheck.test(fname.value)) {
     document.getElementById('fnameerror').innerHTML = "";
     fname.className = "";
@@ -58,7 +78,7 @@ function regCheck() {
     document.getElementById('lnameerror').innerHTML = "";
     lname.className = "";
   } else {
-    document.getElementById('lnameerror').innerHTML = "**Should not contain digits and special characters";
+    document.getElementById('lnameerror').innerHTML = "*Should not contain digits and special characters";
     lname.className = "errClass";
     return false;
   }
@@ -66,7 +86,7 @@ function regCheck() {
     document.getElementById('emailerror').innerHTML = "";
     email.className = "";
   } else {
-    document.getElementById('emailerror').innerHTML = "**Email-id is invalid";
+    document.getElementById('emailerror').innerHTML = "*Email-id is invalid";
     email.className = "errClass";
     return false;
   }
@@ -74,7 +94,7 @@ function regCheck() {
     document.getElementById('passerror').innerHTML = "";
     pass.className = "";
   } else {
-    document.getElementById('passerror').innerHTML = "**Should contain capital letter digits and special characters";
+    document.getElementById('passerror').innerHTML = "*Should contain capital letter digits and special characters";
     pass.className = "errClass";
     return false;
   }

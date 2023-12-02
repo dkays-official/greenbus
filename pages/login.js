@@ -18,7 +18,7 @@ function login() {
     let user = JSON.parse(localStorage.getItem(loggedInUserEmail));
     if (user) {
       document.getElementById("userName").setAttribute("href", "#");
-      document.getElementById("userName").innerHTML = `${user.fname} <a href= "./login.html">Logout</a>`;
+      document.getElementById("userName").innerHTML = `${user.fname} <a href= "./loginPage.html">Logout</a>`;
     }
   };
 
